@@ -5,4 +5,4 @@ Passwords can be generated with options including upper case, lower case, number
 
 # Screenshots
 
-![Screenshot 1](https://github.com/iH-Ahm/Password-Generator/blob/master/other/screenshot.gif) 
+![Screenshot 1](https://github.com/iH-Ahm/Password-Generator/blob/main/other/screenshot.gif) 
