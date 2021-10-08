@@ -21,10 +21,15 @@ namespace Password_Generator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true)
+            if (checkBox1.Checked == false && checkBox2.Checked == false && checkBox3.Checked == false && checkBox4.Checked == false)
             {
-                textBox1.Text = getUpperCase();
+                textBox1.Text = "";
             }
+            else
+            {
+                textBox1.Text = generatePassword();
+            }
+            
         }
 
         private string getUpperCase()
@@ -58,8 +63,8 @@ namespace Password_Generator
 
             for (int i = 0; i < passwordLength; i++)
             {
-                string selectedValue = selectValue();
-                password = password + selectedValue;
+                string selectedCharacter = selectValue();
+                password = password + selectedCharacter;
             }
 
             return password;
@@ -67,7 +72,28 @@ namespace Password_Generator
 
         private string selectValue()
         {
-            return "";
+            int checkBoxNumber = random.Next(1, 5);
+            string character = "";
+            if (checkBox1.Checked == true && checkBoxNumber == 1)
+            {
+                return character = getUpperCase();
+            }
+            else if (checkBox2.Checked == true && checkBoxNumber == 2)
+            {
+                return character = getLowerCase();
+            }
+            else if (checkBox3.Checked == true && checkBoxNumber == 3)
+            {
+                return character = getNumber();
+            }
+            else if (checkBox4.Checked == true && checkBoxNumber == 4)
+            {
+                return character = getSymbol();
+            }
+            else
+            {
+                return character = selectValue();
+            }
         }
     }
 }
